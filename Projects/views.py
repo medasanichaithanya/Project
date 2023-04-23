@@ -23,6 +23,8 @@ def fetchwaist(request):
 
         except Exception as e:
             return JsonResponse({'Status': 'Error occured'})
+    else:
+        return JsonResponse({'Status': 'UNKNOWN ERROR'})
 
 @csrf_exempt
 def updatewaist(request):
@@ -35,8 +37,10 @@ def updatewaist(request):
             weight = body['weight']
             waist = body['waist']
             update_record = Information(height=height, age=age, weight=weight, waist=waist)
-            # update_record.save()
+            update_record.save()
             return JsonResponse({'Status': 'SUCCESS'})
         
         except Exception as e:
             return JsonResponse({'Status': 'Error occured'})
+    else:
+        return JsonResponse({'Status': 'UNKNOWN ERROR'})
