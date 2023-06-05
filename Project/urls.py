@@ -21,6 +21,9 @@ from Projects import views
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('^api/fetch-waist$', views.fetchwaist, name='fetchWaist'),
-    url('^api/update-waist$', views.updatewaist,name='updatewaist')
+    url('^api/update-waist$', views.updatewaist,name='updatewaist'),
+    url('^api/inboundapi$', views.inboundapi,name='inboundapi'),
+    url('^api/outbound$', views.outboundapi,name='inboundapi'),
+
 
 ]
